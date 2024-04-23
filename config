@@ -1,0 +1,26 @@
+IdentityFile ~/.ssh/id_ecdsa
+
+ServerAliveInterval 30
+ForwardX11 yes
+ForwardX11Trusted yes
+
+Host ui
+  User bloggs
+  Hostname 146.141.240.92
+
+Host chpc
+  User jbloggs
+  Hostname lengau.chpc.ac.za
+  IdentityFile ~/.ssh/id_ed25519
+
+Host proxy.somewhere.com
+    Hostname proxy.somewhere.com
+    User jobl
+    IdentityFile ~/.ssh/id_rsa
+  
+Host inner
+    User root
+    Hostname 192.168.220.139
+    Port 22
+    ProxyCommand ssh -q -W %h:%p proxy.somewhere.com
+  

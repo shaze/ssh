@@ -4,6 +4,11 @@ ServerAliveInterval 30
 ForwardX11 yes
 ForwardX11Trusted yes
 
+Host *
+    ControlMaster auto
+    ControlPath ~/.ssh/cm_sockets/%r@%h:%p
+    ControlPersist 6h
+
 Host ui
   User bloggs
   Hostname 146.141.240.92

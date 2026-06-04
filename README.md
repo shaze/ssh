@@ -21,6 +21,12 @@ Put this file in a convenient place (I'll assume you put it in `~/bin/sauth`. Wh
 
 # config
 
+Place this file (_suitably amended_) into your `~/.ssh` directory.
+
+Then execute this  `mkdir ~/.ssh/cm_sockets/`
+
+The _ControlPath_ directive allows one master connection to be used by auxiliary connections for multi-factor authentication. So if you ssh to a machine that requires Googe Authenticator, you need to use your app to enter an additional code. With this directive active, while this connection is up, if you open up other sessions (for example to edit files, run programs, or copy data) you do not have to re-authenticate.
+
 If you ssh into multiple machines, it may be tricky to remember which keys you use, or what account names you should use. You can create a file called `~/.ssh/config` and put something like the template into it. In this example, the config file does the following.
 
 1. My default key to use is `~/.ssh/id_ecdsa`. I can specify another key for a specific machine below in the config file or using the `-i` option to ssh.

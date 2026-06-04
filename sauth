@@ -6,5 +6,5 @@ fi
 ssh-add -l &>/dev/null
 
 if [ "$?" -eq 1 ]; then
-    ssh-add -t 18d
+    ssh-add -t 18h
 fi
